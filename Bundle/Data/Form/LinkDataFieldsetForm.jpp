@@ -1,0 +1,72 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 09:54:02
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:11:10
+**************************************************************/
+
+class LinkDataFieldsetForm extends ElementDataFieldsetForm {
+
+	public _formName = 'Link';
+	public _createFormName = 'link_data_create_form';
+	public _searchFormName = 'link_data_search_form';
+	public _editFormName = 'link_data_edit_form';
+
+	public _owneridDisplay = undefined;
+	public _ownerstateDisplay = undefined;
+	public _targetidDisplay = undefined;
+	public _targetstateDisplay = undefined;
+
+	public getElementsDisplay : function () {
+		var elementsDisplay = _super();
+
+		elementsDisplay['ownerid'] = this.getOwneridDisplay();
+		elementsDisplay['ownerstate'] = this.getOwnerstateDisplay();
+		elementsDisplay['targetid'] = this.getTargetidDisplay();
+		elementsDisplay['targetstate'] = this.getTargetstateDisplay();
+
+		return elementsDisplay;
+	}
+
+	public getOwneridDisplay : function () {
+		if (!this['_owneridDisplay']) {
+			this['_owneridDisplay'] = {};
+			this['_owneridDisplay']['type'] = 'Text';
+			this['_owneridDisplay']['label'] = 'form.input.link.ownerid';
+		}
+		return this['_owneridDisplay'];
+	}
+
+	public getOwnerstateDisplay : function () {
+		if (!this['_ownerstateDisplay']) {
+			this['_ownerstateDisplay'] = {};
+			this['_ownerstateDisplay']['type'] = 'Text';
+			this['_ownerstateDisplay']['label'] = 'form.input.link.ownerstate';
+		}
+		return this['_ownerstateDisplay'];
+	}
+
+	public getTargetidDisplay : function () {
+		if (!this['_targetidDisplay']) {
+			this['_targetidDisplay'] = {};
+			this['_targetidDisplay']['type'] = 'Text';
+			this['_targetidDisplay']['label'] = 'form.input.link.targetid';
+		}
+		return this['_targetidDisplay'];
+	}
+
+	public getTargetstateDisplay : function () {
+		if (!this['_targetstateDisplay']) {
+			this['_targetstateDisplay'] = {};
+			this['_targetstateDisplay']['type'] = 'Text';
+			this['_targetstateDisplay']['label'] = 'form.input.link.targetstate';
+		}
+		return this['_targetstateDisplay'];
+	}
+
+}

@@ -1,0 +1,30 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 11:18:31
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:22:32
+**************************************************************/
+
+class LinkDataTemplateTimelineView extends ElementDataTemplateTimelineView {
+
+	public getUrl : function () {
+		var router = serviceLocator.get('Router');
+
+		return router.build('/link/view', {
+			link_id : this.state['entity'].getId()
+		});
+	}
+
+	public display : function () {
+		var entity = this.state['entity'];
+		return <div onClick={this.link} data-url={this.getUrl()}>
+			{entity.getId() +' : '+ entity.getType() +' | Owner Id -> '+ entity.getOwnerid() + ' | Owner State -> '+ entity.getOwnerstate() +' | Target id : '+ entity.getTargetid() +' | Target state : '+ entity.getTargetstate()}
+		</div>;
+	}
+
+}
