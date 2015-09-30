@@ -1,0 +1,91 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 09:46:12
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 14:40:35
+**************************************************************/
+
+class LinkDataMainEntity extends ElementDataMainEntity {
+
+	public _type = 'Link';
+	public _templateTimeline = 'link_data_timeline_template';
+	public _templateMiniature = 'link_data_miniature_template';
+
+	initialize : function () {
+		_super();
+
+		this['_ownerid'] = undefined;
+		this['_ownerstate'] = undefined;
+		this['_targetid'] = undefined;
+		this['_targetstate'] = undefined;
+	}
+
+	hydrate : function (datas) {
+		_super(datas);
+
+		if (datas['ownerid'])
+			this.setOwnerid(datas['ownerid']);
+		if (datas['ownerstate'])
+			this.setOwnerstate(datas['ownerstate']);
+		if (datas['targetid'])
+			this.setTargetid(datas['targetid']);
+		if (datas['targetstate'])
+			this.setTargetstate(datas['targetstate']);
+	}
+
+	// TODO : Create search for link
+	search : function (params) {
+		var reg = new RegExp(params, 'i');
+
+		return (
+			_super()
+			|| (this.getOwnerid() != undefined && reg.test(this.getId()))
+		);
+	}
+
+	public getOwnerid : function () {
+		return this['_ownerid'];
+	}
+
+	public setOwnerid : function (ownerid) {
+		this['_ownerid'] = ownerid;
+
+		return this;
+	}
+
+	public getOwnerstate : function () {
+		return this['_ownerstate'];
+	}
+
+	public setOwnerstate : function (ownerstate) {
+		this['_ownerstate'] = ownerstate;
+
+		return this;
+	}
+
+	public getTargetid : function () {
+		return this['_targetid'];
+	}
+
+	public setTargetid : function (targetid) {
+		this['_targetid'] = targetid;
+
+		return this;
+	}
+
+	public getTargetstate : function () {
+		return this['_targetstate'];
+	}
+
+	public setTargetstate : function (targetstate) {
+		this['_targetstate'] = targetstate;
+
+		return this;
+	}
+
+}

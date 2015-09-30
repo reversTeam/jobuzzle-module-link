@@ -1,0 +1,26 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 11:12:18
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:12:36
+**************************************************************/
+
+class LinkDataMainService extends ElementDataMainService {
+
+	_type = 'link';
+	_title = 'Links';
+	_entityType = 'Link';
+	_fieldsetName = 'link_data_fieldset_form';
+
+	getTitleParamsView : function (entity) {
+		if (entity)
+			return { url : entity.getId() };
+		return { url : '' };
+	}
+
+}

@@ -1,0 +1,28 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 09:44:44
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 09:45:04
+**************************************************************/
+
+class LinkDataMainCollection extends ElementDataMainCollection {
+
+	_entityType = 'Link';
+	_entityClass = 'link_data_main_entity';
+
+	getProtected : function () {
+		if (this._protect == undefined) {
+			var parent = _super();
+			this._protect = parent.concat(
+				Config.modules.Link.collections.update.protect
+			);
+		}
+		return this._protect;
+	}
+
+}

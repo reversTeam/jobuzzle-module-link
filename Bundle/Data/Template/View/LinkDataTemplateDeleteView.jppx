@@ -1,0 +1,24 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 11:17:58
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 13:18:42
+**************************************************************/
+
+class LinkDataTemplateDeleteView extends ElementDataTemplateDeleteView {
+
+	public _class = 'link';
+	public _elementType = 'Link';
+
+	public display : function () {
+		return <div>
+			Delete Link
+		</div>;
+	}
+
+}

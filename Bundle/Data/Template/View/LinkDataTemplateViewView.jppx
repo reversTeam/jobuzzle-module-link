@@ -1,0 +1,41 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 11:18:47
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:23:10
+**************************************************************/
+
+class LinkDataTemplateViewView extends ElementDataTemplateViewView {
+
+	public _class = 'link';
+	public _elementType = 'Link';
+
+	public getUrlEdit : function () {
+		var entity = this.state['entity'];
+		var router = serviceLocator.get('Router');
+		var url = '';
+
+		if (entity != undefined) {
+			url = router.build('/link/view/update', {
+				'link_id' : entity.getId()
+			});
+		}
+
+		return url;
+	}
+
+	public display : function () {
+		var entity = this.state['entity'];
+
+		return <div>
+			View Link : {entity != undefined ? entity.getName() : '' }
+			<i className="fa fa-pencil" onClick={this.link} data-url={this.getUrlEdit()}></i>
+		</div>;
+	}
+
+}

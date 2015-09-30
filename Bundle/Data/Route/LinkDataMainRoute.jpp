@@ -1,0 +1,23 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 11:11:49
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:12:00
+**************************************************************/
+
+class LinkDataMainRoute extends ElementDataMainRoute {
+
+	name = 'link';
+
+	baseName = 'Link';
+	baseRoute = '{links}';
+	baseController = 'link_data_main_controller';
+
+	paramName = 'link_id';
+
+}

@@ -1,0 +1,24 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 11:18:15
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:21:29
+**************************************************************/
+
+class LinkDataTemplateMiniatureView extends ElementDataTemplateMiniatureView {
+
+	public display : function () {
+		var entity = this.state['entity'];
+		return (
+			<div>
+				{entity.getId() +' : '+ entity.getType() +' | Owner Id -> '+ entity.getOwnerid() + ' | Owner State -> '+ entity.getOwnerstate() +' | Target id : '+ entity.getTargetid() +' | Target state : '+ entity.getTargetstate()}
+			</div>
+		);
+	}
+
+}
