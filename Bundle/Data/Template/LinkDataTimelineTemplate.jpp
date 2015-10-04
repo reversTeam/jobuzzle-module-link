@@ -7,11 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:16:04
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-04 02:20:39
 **************************************************************/
 
 class LinkDataTimelineTemplate extends ElementDataTimelineTemplate {
 
 	public _viewClassName = 'LinkDataTemplateTimelineView';
+	public _type = 'Link';
 
 }
