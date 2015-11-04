@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:11:10
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:26:41
 **************************************************************/
 
 class LinkDataFieldsetForm extends ElementDataFieldsetForm {
@@ -22,6 +22,11 @@ class LinkDataFieldsetForm extends ElementDataFieldsetForm {
 	public _targetidDisplay = undefined;
 	public _targetstateDisplay = undefined;
 
+	public _owneridInput = undefined;
+	public _ownerstateInput = undefined;
+	public _targetidInput = undefined;
+	public _targetstateInput = undefined;
+
 	public getElementsDisplay : function () {
 		var elementsDisplay = _super();
 
@@ -31,6 +36,18 @@ class LinkDataFieldsetForm extends ElementDataFieldsetForm {
 		elementsDisplay['targetstate'] = this.getTargetstateDisplay();
 
 		return elementsDisplay;
+	}
+
+	public getElementsInput : function () {
+		var elementsInput = _super();
+
+		elementsInput['ownerid'] = this.getOwnerIdInput();
+		elementsInput['ownerstate'] = this.getOwnerStateInput();
+		elementsInput['targetid'] = this.getTargetIdInput();
+		elementsInput['targetstate'] = this.getTargetStateInput();
+
+
+		return elementsInput;
 	}
 
 	public getOwneridDisplay : function () {
@@ -67,6 +84,66 @@ class LinkDataFieldsetForm extends ElementDataFieldsetForm {
 			this['_targetstateDisplay']['label'] = 'form.input.link.targetstate';
 		}
 		return this['_targetstateDisplay'];
+	}
+
+	public getOwnerIdInput : function () {
+		if (this['_owneridInput'] == undefined) {
+			this['_owneridInput'] = {};
+
+			this['_owneridInput']['required'] = false;
+
+			this['_owneridInput']['filters'] = [];
+			this['_owneridInput']['filters'][0] = {}
+			this['_owneridInput']['filters'][0]['name'] = 'Trim';
+			this['_owneridInput']['filters'][1] = {}
+			this['_owneridInput']['filters'][1]['name'] = 'Int';
+		}
+		return this['_owneridInput'];
+	}
+
+	public getOwnerStateInput : function () {
+		if (this['_ownerstateInput'] == undefined) {
+			this['_ownerstateInput'] = {};
+
+			this['_ownerstateInput']['required'] = false;
+
+			this['_ownerstateInput']['filters'] = [];
+			this['_ownerstateInput']['filters'][0] = {}
+			this['_ownerstateInput']['filters'][0]['name'] = 'Trim';
+			this['_ownerstateInput']['filters'][1] = {}
+			this['_ownerstateInput']['filters'][1]['name'] = 'Int';
+		}
+		return this['_ownerstateInput'];
+	}
+
+	public getTargetIdInput : function () {
+		if (this['_targetidInput'] == undefined) {
+			this['_targetidInput'] = {};
+
+			this['_targetidInput']['required'] = false;
+
+			this['_targetidInput']['filters'] = [];
+			this['_targetidInput']['filters'][0] = {}
+			this['_targetidInput']['filters'][0]['name'] = 'Trim';
+			this['_targetidInput']['filters'][1] = {}
+			this['_targetidInput']['filters'][1]['name'] = 'Int';
+		}
+		return this['_targetidInput'];
+	}
+
+	public getTargetStateInput : function () {
+		if (this['_targetstateInput'] == undefined) {
+			this['_targetstateInput'] = {};
+
+			this['_targetstateInput']['required'] = false;
+
+			this['_targetstateInput']['filters'] = [];
+			this['_targetstateInput']['filters'][0] = {}
+			this['_targetstateInput']['filters'][0]['name'] = 'Trim';
+			this['_targetstateInput']['filters'][1] = {}
+			this['_targetstateInput']['filters'][1]['name'] = 'Int';
+		}
+		return this['_targetstateInput'];
 	}
 
 }
