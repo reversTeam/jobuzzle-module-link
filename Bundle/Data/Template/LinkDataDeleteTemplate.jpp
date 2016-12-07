@@ -7,13 +7,12 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-09-30 11:15:24
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-21 14:49:25
 **************************************************************/
 
 class LinkDataDeleteTemplate extends ElementDataDeleteTemplate {
 
 	public _viewClassName = 'LinkDataTemplateDeleteView';
 	public _type = 'Link';
-	public _route = 'link';
 
 }
